@@ -29,6 +29,11 @@
           var gender = patient.gender;
           var parsedPatient = JSON.stringify(patient);
           sessionStorage.setItem('patientResponse',parsedPatient);
+          
+          
+          var identifiers = patient.identifier.filter(identifier => identifier.type.text == "MRN");
+          var mrn = identifiers[0].value;
+          
 
           var fname = '';
           var lname = '';
@@ -51,6 +56,7 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
           p.parsedPatient = parsedPatient;
+          p.mrn = mrn;
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -78,6 +84,7 @@
   function defaultPatient(){
     return {
       parsedPatient: {value: ''},
+      mrn: {value: ''},
       fname: {value: ''},
       lname: {value: ''},
       gender: {value: ''},
@@ -121,6 +128,7 @@
   window.drawVisualization = function(p) {
     $('#holder').show();
     $('#loading').hide();
+    $('#patientResponse').html(p.parsedPatient);
     $('#fname').html(p.fname);
     $('#lname').html(p.lname);
     $('#gender').html(p.gender);
@@ -130,7 +138,8 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    $('#patientResponse').html(p.parsedPatient);
+    $('#mrn').html(p.mrn);
+
   };
 
 })(window);
