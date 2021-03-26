@@ -27,7 +27,7 @@
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
-          sessionStorage.setItem('patientResponse',patient)
+          sessionStorage.setItem('patientResponse',patient);
 
           var fname = '';
           var lname = '';
