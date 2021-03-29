@@ -96,6 +96,7 @@
       FHIR.oauth2.ready(onReady, onError);
       
           function onReady(smart)  {
+            $('#loading').hide();
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();}
