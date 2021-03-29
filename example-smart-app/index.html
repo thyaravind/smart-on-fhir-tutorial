@@ -76,7 +76,7 @@
 
 
     <!-- Application-level javascript-->
-    <script src='./src/js/example-smart-app.js'></script>
+   <!-- <script src='./src/js/example-smart-app.js'></script> -->
 
     <!-- FHIR Client JS Library -->
     <script src='./lib/js/fhir-client-v0.1.12.js'></script>
@@ -98,7 +98,7 @@
           function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
-        var pt = patient.read();
+        var pt = patient.read();}
         
                   if (typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
