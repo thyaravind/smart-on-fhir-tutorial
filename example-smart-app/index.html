@@ -25,7 +25,7 @@
       <h2>Patient Resource</h2>
       <table>
         <tr>
-          <th>First Name:</th>
+          <th>Status:</th>
           <td id='fname'></td>
         </tr>
         <tr>
@@ -101,12 +101,7 @@
         var patient = smart.patient;
         var pt = patient.read();}
         
-                  if (typeof pt.name[0] !== 'undefined') {
-            fname = pt.name[0].given.join(' ');
-            lname = pt.name[0].family.join(' ');
-          }
-            $('#fname').html(fname);
-    $('#lname').html(lname);
+            $('#fname').html("FHIR Launch is working");
         
         
       }
